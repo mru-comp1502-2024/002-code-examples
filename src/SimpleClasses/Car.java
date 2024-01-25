@@ -2,12 +2,18 @@ package SimpleClasses;
 
 public class Car {
     
-    String make;
-    String model;
-    int year;
-    int odometer;
+    private String make;
+    private String model;
+    private int year;
+    private int odometer;
 
-    /** constructor for the Car object */
+    /**
+     * constructor for the car class
+     * @param make - the make
+     * @param model - the model
+     * @param year - the year
+     * @param odometer - odometer (in km)
+     */
     public Car(String make, String model, int year, int odometer) {
         this.make = make;
         this.model = model;
@@ -32,4 +38,36 @@ public class Car {
         return this.year + " " + this.make + " " + this.model + " with " + this.odometer + "km";
     }
 
+    /**
+     * @return the make
+     */
+    public String getMake() {
+        return this.make;
+    }
+
+    public int getOdometer() {
+        return this.odometer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }   
+
+    /**
+     * setter for odometer value. Performs validation to ensure value is positive
+     * @param odometer - the new odometer reading
+     */
+    public void setOdometer(int odometer) {
+        if (odometer < 0) {
+            System.out.println("odometer can't be negative!");
+        }
+        else {
+            this.odometer = odometer;
+        }
+    }
+    
 }
