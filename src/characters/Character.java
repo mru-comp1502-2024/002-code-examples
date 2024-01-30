@@ -48,6 +48,11 @@ public class Character {
         writer.close();
     }
 
+    /** overloaded save method - names the file after Character */
+    public void save() throws FileNotFoundException {
+        this.save(this.name + ".txt");
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         Character eric = new Character("eric", 10, 1);
         eric.save("testFile.txt");
