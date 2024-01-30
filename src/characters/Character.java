@@ -2,6 +2,7 @@ package characters;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /** represents a game character */
 public class Character {
@@ -20,6 +21,23 @@ public class Character {
         this.name = name;
         this.dexterity = dexterity;
         this.strength = strength;
+    }
+
+    /**
+     * alternate constructor for loading a previously-saved character object
+     * @param filename - filename where character was saved (using save method)
+     * @throws FileNotFoundException
+     */
+    public Character(String filename) throws FileNotFoundException {
+        File filePath = new File(filename);
+        Scanner file = new Scanner(filePath);
+
+        String line = file.nextLine();
+        String[] characterStats = line.split(",");
+
+        this.name = characterStats[0];
+        this.dexterity = Integer.parseInt(characterStats[1]);
+        this.strength = Integer.parseInt(characterStats[2]);
     }
 
     public String getName() {
