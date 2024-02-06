@@ -72,8 +72,8 @@ public class Character {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        Character eric = new Character("eric", 10, 1);
-        eric.save("testFile.txt");
+        Character eric = new Character("testFile.txt");
+
     }
 
 }

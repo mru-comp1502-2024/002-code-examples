@@ -13,7 +13,6 @@ public class CharacterController {
         int dexterity = userInterface.getCharacterDexterity();
 
         Character theCharacter = new Character(name, dexterity, strength);
-        
 
     }
 
