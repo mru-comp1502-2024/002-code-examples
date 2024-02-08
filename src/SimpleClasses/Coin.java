@@ -5,12 +5,17 @@ import java.util.Random;
 
 public class Coin {
     //____ data attributes ____
-    String sideUp; // current coin state
-    Random rnd = new Random(); // random number generator
+    private String sideUp; // current coin state
+    private Random rnd = new Random(); // random number generator
 
     /** constructor */
     public Coin(String state) {
         this.sideUp = state;
+    }
+
+    /** alternate (overload) constructor for if you don't want to specify the starting state*/
+    public Coin() {
+        this.sideUp = "tails";
     }
 
     /** method to randomly change coin state */
@@ -22,8 +27,14 @@ public class Coin {
 
     /** method to return current state */
     public String getSideUp() {
-        // return the
+        // return the current state of the coin
         return this.sideUp;
+    }
+
+    public void setSideUp(String newValue) {
+        if (newValue.equals("heads") || newValue.equals("tails")) {
+            this.sideUp = newValue;
+        }
     }
 }
 

@@ -50,11 +50,11 @@ public class Car {
     }
 
     public String getModel() {
-        return model;
+        return this.model;
     }
 
     public int getYear() {
-        return year;
+        return this.year;
     }   
 
     /**
