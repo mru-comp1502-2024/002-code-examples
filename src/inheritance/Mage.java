@@ -1,4 +1,7 @@
 package inheritance;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import characters.Character;
@@ -25,4 +28,13 @@ public class Mage extends Character{
         this.spells.add(spellName);
     }
 
+    @Override
+    public void save(String filename) throws FileNotFoundException {
+        File file = new File(filename);
+        PrintWriter writer = new PrintWriter(file);
+
+        writer.write(this.getName() + "," + this.getDexterity() + "," + this.getStrength() + "," + this.mana + "," + this.spells);
+
+        writer.close();
+    }
 }
