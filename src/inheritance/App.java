@@ -13,5 +13,10 @@ public class App {
         list.add(myDog);
         list.add(myFrog);
         
+        // as long as the object is treated like an Animal, we won't have access to Dog members
+        Animal a = list.get(0);
+        a.isSexualReproduction();
+        Dog d = (Dog) a;
+        d.setShedsOnCarpet(false);
     }
 }
