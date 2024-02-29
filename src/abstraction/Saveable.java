@@ -9,5 +9,5 @@ public interface Saveable {
      * all classes that implement Saveable must have a "save" method
      * @param filename
      */
-    public void save(String filename) throws FileNotFoundException;
+    public abstract void save(String filename) throws FileNotFoundException;
 }
