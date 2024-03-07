@@ -1,5 +1,6 @@
 package exceptions;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class RuntimeError {
