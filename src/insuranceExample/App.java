@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class App {
     
     public static void main(String[] args) {
+
+        // better would be to move all this user interaction stuff to it's own class
+        // (better separation-of-concerns)
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("is this a home claim? (y/n) ");
@@ -18,6 +21,18 @@ public class App {
 
         Claim claim = new Claim(home, auto, recent);
 
-        
+
+        // now shop the claim around to the various departments
+        Department[] departments = {
+            new AutoDept(),
+            new HomeDept(),
+            new FraudDept()
+        };
+
+        for (Department d : departments) {
+            if (d.canAccept(claim)) {
+                System.out.println(d);
+            }
+        }
     }
 }

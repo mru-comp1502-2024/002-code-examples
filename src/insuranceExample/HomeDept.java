@@ -10,7 +10,7 @@ public class HomeDept extends Department {
 
     @Override
     public boolean canAccept(Claim claim) {
-        return claim.isHome();
+        return claim.isHome() && !claim.isRecent();
     }
     
 }

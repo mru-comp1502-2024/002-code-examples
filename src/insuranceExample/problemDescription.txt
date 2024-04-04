@@ -1,0 +1,6 @@
+An insurance company is building a claim-processing system. You must write the software that asks the user questions about the claim, and then routes the claim to the appropriate department for processing:
+If the user is making a home insurance claim, it should be routed to the home claims department. 
+Auto insurance claims should be routed to the auto claims department. 
+A claim involving both Home and Auto policies can go to home claims.
+BUT
+Any claim by a customer who already made a claim in the last 3 months should be routed to the fraud investigation department instead.
